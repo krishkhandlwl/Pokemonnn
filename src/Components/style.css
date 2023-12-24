@@ -1,85 +1,210 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-*{
-    padding: 0;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7FD4FF; /* Updated background color */
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-body{
-    background-color: #FCEEC8;
-}
-.container{
-    width: 90%;
+
+
+
+.container {
+    width: 80%;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
     display: flex;
+    justify-content: center; /* Center the content horizontally */
 }
-.left-content,.right-content{
-    flex-basis: 50%;
-}
-.left-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
-    grid-gap:2rem;
-}
-.card{
-    width: 300px;
-    background-color:#9EDEF9;
-    border-radius: 1rem;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
-    padding: 0 1.5rem;
+
+.left-content {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%; /* Ensure the left content takes up the full width */
+}
+
+.card {
+    width: calc(30% - 20px); /* Adjusted card width */
+    margin: 10px;
+    background-color: #FFD97D;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
 }
-.right-content{
-    width: 50%;
-    text-align: center;
-    color: black;
-    position: fixed;
-    top:100px;
-    right: 10px;
+
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Adjusted margin for spacing between image and details */
 }
-.right-content img{
-    margin: 1.5rem;
-    height: 160px;
+
+.card h2 {
+    font-size: 18px; /* Decreased font size for Pokémon name */
+    margin-bottom: 5px;
 }
-.right-content h1{
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-.abilities{
-    width: 70%;
-    margin: auto;
+
+.card .abilities {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 10px; /* Adjusted margin for spacing between abilities and stats */
 }
-.abilities .group{
-    background-color: #b74555;
+
+.card .abilities .group {
+    background-color: #B74555;
     color: white;
     padding: 0.5rem;
     font-size: 12px;
     border-radius: 8px;
-    margin-left: 1rem;
+    margin-right: 5px; /* Adjusted margin for spacing between abilities */
+    margin-bottom: 5px; /* Adjusted margin for spacing between abilities */
 }
-.base-stat{
+
+.card .base-stat h3 {
+    font-size: 14px; /* Decreased font size for stats */
+    margin-bottom: 5px;
+}
+
+/* Add more styles as needed */
+
+
+.card:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Add a larger shadow on hover */
+}
+
+.btn-group button:hover {
+    background-color: #8C3848; /* Darkened color on hover */
+    transform: translateY(-2px); /* Move the button up slightly on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+.card:hover {
+    cursor: pointer; /* Change cursor to a pointer hand on hover */
+}
+
+.btn-group button:hover {
+    cursor: pointer; /* Change cursor to a pointer hand on hover */
+}
+
+
+.right-content {
+    width: 48%;
+    text-align: center;
+    color: #333; /* Darkened text color */
+    position: relative; /* Removed fixed positioning */
+    top: auto;
+    right: auto;
+    margin-top: 20px; /* Added margin-top */
+}
+
+.right-content img {
+    margin: 1.5rem;
+    height: 120px; /* Reduced image height */
+    border-radius: 50%; /* Rounded image */
+}
+
+.right-content h1 {
+    text-transform: capitalize; /* Adjusted text-transform */
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px; /* Added margin-bottom */
+}
+
+.abilities {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* Wrapped abilities */
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.abilities .group {
+    background-color: #B74555;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 14px; /* Increased font size */
+    border-radius: 12px; /* Increased border radius */
+    margin: 0.5rem; /* Adjusted margin */
+}
+
+.base-stat {
     margin-top: 2rem;
 }
-.btn-group{
+
+.btn-group {
     display: flex;
+    justify-content: center; /* Centered buttons */
 }
-.btn-group button{
+
+.btn-group button {
     outline: none;
     border: none;
     width: 150px;
-    padding: 0.3rem 0;
+    padding: 0.8rem 0; /* Adjusted padding */
     margin: 1rem;
-    font-size: 17px;
+    font-size: 16px; /* Adjusted font size */
     font-weight: bold;
-    color: white;
-    background-color: #b74555;
+    color: #fff;
+    background-color: #B74555;
     border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-group button:hover {
+    background-color: #8C3848; /* Darkened color on hover */
+}
+
+.poke-info-container {
+    background-color: #FFF;
+    border: 2px solid #B74555;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.poke-info-container h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.poke-info-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.poke-info-container .abilities {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.poke-info-container .abilities .group {
+    background-color: #B74555;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.poke-info-container .base-stat {
+    margin-top: 20px;
+}
+
+.poke-info-container .base-stat h3 {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
